@@ -14,5 +14,5 @@ const mb = menubar({
   index: `file://${__dirname}/app/app.html`,
   dir: __dirname + '/app',
   height: 300,
-  width: 364
+  width: 250
 })

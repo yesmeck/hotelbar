@@ -4,7 +4,9 @@ import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { hashHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
+import createSagaMiddleware from 'redux-saga'
 import rootReducer from '../reducers';
+import rootSaga from '../sagas'
 
 const logger = createLogger({
   level: 'info',
@@ -12,9 +14,10 @@ const logger = createLogger({
 });
 
 const router = routerMiddleware(hashHistory);
+const saga = createSagaMiddleware()
 
 const enhancer = compose(
-  applyMiddleware(thunk, router, logger),
+  applyMiddleware(thunk, router, saga, logger),
   persistState(
     window.location.href.match(
       /[?&]debug_session=([^&]+)\b/
@@ -24,6 +27,7 @@ const enhancer = compose(
 
 export default function configureStore(initialState) {
   const store = createStore(rootReducer, initialState, enhancer);
+  saga.run(rootSaga)
 
   if (module.hot) {
     module.hot.accept('../reducers', () =>

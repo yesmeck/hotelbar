@@ -1,6 +1,7 @@
 /* eslint max-len: 0 */
 import webpack from 'webpack';
 import baseConfig from './webpack.config.base';
+import simpleVars from 'postcss-simple-vars'
 
 const config = {
   ...baseConfig,
@@ -11,6 +12,7 @@ const config = {
 
   entry: [
     'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
+    'babel-polyfill',
     './app/index'
   ],
 
@@ -28,7 +30,8 @@ const config = {
         test: /\.global\.css$/,
         loaders: [
           'style-loader',
-          'css-loader?sourceMap'
+          'css-loader?sourceMap',
+          'postcss'
         ]
       },
 
@@ -53,6 +56,10 @@ const config = {
       }
     })
   ],
+
+  postcss: function () {
+    return [simpleVars]
+  },
 
   target: 'electron-renderer'
 };
