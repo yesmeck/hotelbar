@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { watchMonitors, start, stop } from '../actions/monitors'
-import List from '../components/List'
+import List from 'components/List/List'
 
 class ListPage extends Component {
   componentWillMount() {

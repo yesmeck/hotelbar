@@ -1,0 +1,47 @@
+.item {
+	display: flex;
+	justify-content: space-between;
+	padding: 8px;
+	border-bottom: 1px solid #E2E2E2;
+
+	&:last-child {
+		border: none;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+
+	&:hover {
+		background: #FFF;
+
+		.toggle {
+			display: inline;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: #434343;
+	}
+
+	.tld {
+		&.running {
+			color: #00c853;
+		}
+
+		&.stopped {
+			color: #D7D7D7;
+		}
+	}
+
+	.toggle {
+		display: none;
+
+		&.on {
+			color: #00c853;
+		}
+
+		&.off {
+			color: #D7D7D7;
+		}
+	}
+}

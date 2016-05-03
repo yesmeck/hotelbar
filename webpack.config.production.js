@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import baseConfig from './webpack.config.base';
-import simpleVars from 'postcss-simple-vars'
+import autoprefixer from 'autoprefixer'
 
 const config = {
   ...baseConfig,
@@ -21,20 +21,19 @@ const config = {
 
     loaders: [
       ...baseConfig.module.loaders,
-
       {
-        test: /\.global\.css$/,
+        test: /\.css$/,
         loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader!postcss'
+          'style',
+          'css'
         )
       },
 
       {
-        test: /^((?!\.global).)*\.css$/,
+        test: /\.scss$/,
         loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+          'style',
+          'css?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass?outputStyle=expanded&sourceMap',
         )
       }
     ]
@@ -59,7 +58,7 @@ const config = {
   ],
 
   postcss: function () {
-    return [simpleVars]
+    return [autoprefixer]
   },
 
   target: 'electron-renderer'

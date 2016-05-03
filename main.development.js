@@ -12,7 +12,8 @@ const mb = menubar({
   dir: __dirname + '/app',
   icon: __dirname + '/app/icons/IconTemplate.png',
   height: 300,
-  width: 250
+  width: 250,
+  transparent: true,
 })
 
 // mb.on('after-create-window', () => {

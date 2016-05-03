@@ -1,0 +1,25 @@
+.title {
+	-webkit-user-select: none;
+	margin-top: 10px;
+	cursor: default;
+	display: flex;
+	align-items: center;
+	height: 30px;
+	border-bottom-width: 1px solid rgb(175, 175, 175);
+	border-top-width: 1px solid rgb(246, 246, 246);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding-left: 9px;
+	padding-right: 9px;
+	visibility: visible;
+	background-image: -webkit-linear-gradient(top, rgb(237, 237, 237) 0px, rgb(237, 237, 237) 1px, rgb(231, 231, 231) 2px, rgb(209, 209, 209) 100%);
+}
+
+.arrow {
+	margin: -36px auto 0 auto;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid rgb(246, 246, 246);
+}

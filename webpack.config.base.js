@@ -24,6 +24,9 @@ export default {
     libraryTarget: 'commonjs2'
   },
   resolve: {
+    root: [
+      path.resolve(__dirname, 'app'),
+    ],
     extensions: ['', '.js', '.jsx'],
     packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main']
   },

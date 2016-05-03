@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import Title from 'components/Title/Title'
+import styles from './App.scss'
 
 export default class App extends Component {
   static propTypes = {
@@ -8,7 +10,10 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        {this.props.children}
+        <Title />
+        <div className={styles.container}>
+          {this.props.children}
+        </div>
       </div>
     );
   }
