@@ -1,8 +1,5 @@
-import { app, BrowserWindow, Menu, crashReporter, shell } from 'electron';
+import { crashReporter } from 'electron';
 import menubar from 'menubar'
-
-let menu;
-let template;
 
 crashReporter.start();
 
@@ -13,6 +10,11 @@ if (process.env.NODE_ENV === 'development') {
 const mb = menubar({
   index: `file://${__dirname}/app/app.html`,
   dir: __dirname + '/app',
+  icon: __dirname + '/app/icons/IconTemplate.png',
   height: 300,
   width: 250
 })
+
+// mb.on('after-create-window', () => {
+//   mb.window.openDevTools()
+// })

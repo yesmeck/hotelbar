@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import baseConfig from './webpack.config.base';
+import simpleVars from 'postcss-simple-vars'
 
 const config = {
   ...baseConfig,
@@ -25,7 +26,7 @@ const config = {
         test: /\.global\.css$/,
         loader: ExtractTextPlugin.extract(
           'style-loader',
-          'css-loader'
+          'css-loader!postcss'
         )
       },
 
@@ -56,6 +57,10 @@ const config = {
     }),
     new ExtractTextPlugin('style.css', { allChunks: true })
   ],
+
+  postcss: function () {
+    return [simpleVars]
+  },
 
   target: 'electron-renderer'
 };
