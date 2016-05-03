@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import shell from 'shell'
 import cx from 'classnames'
+import { Link } from 'react-router'
 import { API_HOST } from '../constants'
 
 function isRunning(status) {
@@ -55,9 +56,9 @@ export default class List extends Component {
                 </td>
 
                 <td>
-                  <a title="logs" className="toggle-output">
+                  <Link title="logs" className="toggle-output" to={`/output/${monitor.id}`}>
                     <i className="fa fa-angle-right"></i>
-                  </a>
+                  </Link>
                 </td>
               </tr>
             ))}

@@ -80,10 +80,9 @@ tr {
   background: $output-background;
   color: $output-color;
   border-left: 1px solid #EEE;
+  border-right: 1px solid #EEE;
   position: absolute;
-  left: 360px;
-  right: 0;
-  top: 0;
+  top: 40px;
   bottom: 0;
 }
 

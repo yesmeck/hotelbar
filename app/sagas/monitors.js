@@ -11,7 +11,6 @@ function* watchMonitors(msgSource) {
   }
 }
 
-
 export default function* root() {
   yield take(WATCH_MONITORS)
   const msgSource = yield call(createSource, `${API_HOST}/events`)

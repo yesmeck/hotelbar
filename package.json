@@ -99,6 +99,7 @@
     "webpack-hot-middleware": "^2.10.0"
   },
   "dependencies": {
+    "ansi-html": "0.0.5",
     "classnames": "^2.2.5",
     "css-modules-require-hook": "^4.0.0",
     "electron-debug": "^0.6.0",
@@ -112,7 +113,8 @@
     "redux": "^3.4.0",
     "redux-saga": "^0.10.2",
     "redux-thunk": "^2.0.1",
-    "source-map-support": "^0.4.0"
+    "source-map-support": "^0.4.0",
+    "uid": "0.0.2"
   },
   "devEngines": {
     "node": "4.x || 5.x || 6.x",
