@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { watchMonitors } from '../actions/monitors'
+import { watchMonitors, start, stop } from '../actions/monitors'
 import List from '../components/List'
 
 class ListPage extends Component {
