@@ -27,7 +27,7 @@ export default {
     root: [
       path.resolve(__dirname, 'app'),
     ],
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.json'],
     packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main']
   },
   plugins: [
