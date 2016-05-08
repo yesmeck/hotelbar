@@ -13,6 +13,7 @@ const mb = menubar({
   icon: __dirname + '/app/icons/IconTemplate.png',
   height: 300,
   width: 250,
+  resizable: false,
   transparent: true,
 })
 
