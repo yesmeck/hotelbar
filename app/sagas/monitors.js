@@ -1,4 +1,3 @@
-import { remote } from 'electron'
 import { eventChannel } from 'redux-saga'
 import { call, take, put, fork } from 'redux-saga/effects'
 import { WATCH_MONITORS, setMonitors } from '../actions/monitors'

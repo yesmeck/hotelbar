@@ -18,7 +18,7 @@
 		}
 	}
 
-	a {
+	.monitor {
 		text-decoration: none;
 		color: #434343;
 	}
@@ -32,12 +32,22 @@
 	}
 
 	.toggle {
+		margin-right: 5px;
+
 		&.on {
 			color: #00c853;
 		}
 
 		&.off {
 			color: #D7D7D7;
+		}
+	}
+
+	.remove {
+		color: #D7D7D7;
+
+		&:hover {
+			color: #434343;
 		}
 	}
 }

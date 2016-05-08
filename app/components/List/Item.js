@@ -1,9 +1,12 @@
+import { remote } from 'electron'
 import React, { Component } from 'react'
 import shell from 'shell'
 import cx from 'classnames'
 import { Link } from 'react-router'
 import { API_HOST } from '../../constants'
 import styles from './List.scss'
+
+const servers = remote.require('hotel/lib/cli/servers')
 
 function isRunning(status) {
   console.debug(status)
@@ -29,6 +32,11 @@ export default class Item extends Component {
     isRunning(status) ? stop(id) : start(id)
   }
 
+  remove = ({ id }) => event => {
+    event.preventDefault()
+    servers.rm(id)
+  }
+
   render() {
     const { monitor } = this.props
 
@@ -50,6 +58,13 @@ export default class Item extends Component {
             onClick={this.toggle(monitor)}
           >
             <i className={cx('fa', isRunning(monitor.status) ? 'fa-toggle-on' : 'fa-toggle-off')} />
+          </a>
+          <a
+            href="#"
+            className={styles.remove}
+            onClick={this.remove(monitor)}
+          >
+            <i className="fa fa-remove" />
           </a>
         </div>
       </div>

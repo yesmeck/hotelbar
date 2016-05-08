@@ -107,6 +107,7 @@
     "css-modules-require-hook": "^4.0.0",
     "electron-debug": "^0.6.0",
     "font-awesome": "^4.6.1",
+    "hotel": "^0.4.21",
     "menubar": "^4.1.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
