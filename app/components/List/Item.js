@@ -6,6 +6,7 @@ import { API_HOST } from '../../constants'
 import styles from './List.scss'
 
 function isRunning(status) {
+  console.debug(status)
   return status === 'running'
 }
 
