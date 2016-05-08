@@ -36,11 +36,11 @@ export default class Item extends Component {
       <div className={styles.item}>
         <a
           title={`${monitor.cwd}$ ${monitor.command[2]}`}
-          className="monitor"
+          className={styles.monitor}
           href="#"
           onClick={this.open(monitor)}
         >
-          {monitor.id}<span className={cx(styles.tld, styles[monitor.status])}>.dev</span>
+          {monitor.id}<span className={styles.status}> - {monitor.status}</span>
         </a>
 
         <div className="controller">

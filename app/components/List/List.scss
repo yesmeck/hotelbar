@@ -23,19 +23,15 @@
 		color: #434343;
 	}
 
-	.tld {
-		&.running {
-			color: #00c853;
-		}
+	.monitor {
+		font-size: 14px;
+	}
 
-		&.stopped {
-			color: #D7D7D7;
-		}
+	.status {
+		font-size: 12px;
 	}
 
 	.toggle {
-		display: none;
-
 		&.on {
 			color: #00c853;
 		}
